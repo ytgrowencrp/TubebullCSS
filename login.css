@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-shadow: border-box;
+  font-family: 'El Messiri', sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+img {
+  width: 32px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: gradient 10s ease infinite;
+}
+
+
+.box {
+  position: relative;
+  
+  .square {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    animation: square 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+  }
+  
+  @keyframes square {
+    0%,100% {
+      transform: translateY(-20px);
+    }
+    
+    50% {
+      transform: translateY(20px);
+    }
+  }
+  
+  .square:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: -15px;
+    right: -45px;
+  }
+  
+  .square:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 105px;
+    left: -125px;
+    z-index: 2;
+  }
+  
+  .square:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    bottom: 85px;
+    right: -45px;
+    z-index: 2;
+  }
+  
+  .square:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    bottom: 35px;
+    left: -95px;
+  }
+  
+  .square:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    top: -15px;
+    left: -25px;
+  }
+  
+  .square:nth-child(6) {
+    width: 85px;
+    height: 85px;
+    top: 165px;
+    right: -155px;
+    z-index: 2;
+  }
+}
+
+.container {
+  position: relative;
+  padding: 50px;
+  width: 260px;
+  min-height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  background: linear-gradient( to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 2%
+  );
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+   h2 {
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  .inputBx {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    
+    input {
+      width: 80%;
+      outline: none;
+      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 10px;
+      padding-left: 40px;
+      border-radius: 15px;
+      color: #fff;
+      font-size: 16px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .password-control {
+      position: absolute;
+      top: 11px;
+      right: 10px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+      transition: 0.5s;
+}
+        
+      .view {
+         background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
+        transition: 0.5s;
+  }
+
+    
+  
+    img {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      transform: scale(0.6);
+      filter: invert(1);
+    }
+    
+    input[type="submit"] {
+      background: #fff;
+      color: #111;
+      max-width: 100px;
+      padding: 8px 10px;
+      box-shadow: none;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 1.5s;
+    }
+    
+    input[type="submit"]:hover {
+      background: linear-gradient(115deg, 
+        rgba(0,0,0,0.10), 
+        rgba(255,255,255,0.25));
+      color: #fff;
+      transition: .5s;
+    }
+    
+    input::placeholder {
+      color: #fff;
+    }
+    
+    span {
+        position: absolute;
+        left: 30px;
+        padding: 10px;
+        display: inline-block;
+        color: #fff;
+        transition: .5s;
+        pointer-events: none;
+      }
+    
+    input:focus ~ span,
+    input:valid ~ span {
+      transform: translateX(-30px) translateY(-25px);
+      font-size: 12px;
+    }
+  }
+  
+  p {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 5px;
+  
+    a {
+      color: #fff;
+    }
+    
+    a:hover {
+      background-color: #000;
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.remember {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.containerselect {
+  position: relative;
+  padding: 5px;
+  width: auto;
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+.containeroutput {
+  position: relative;
+  padding: 5px;
+  padding: 50px;
+  width: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  margin-left: 5px;
+}
+
+input[type=Email] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://i.ibb.co/vP4FmvR/Email.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin: 5px;
+}
+  input[type=Password] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://i.ibb.co/S5gSvsY/key.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin: 5px 5px 12px 5px;
+}
+
+input[type=Name] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://i.ibb.co/3vqWjtY/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin: 5px;
+}
+
+input[type=Video] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://i.ibb.co/M5vZSGV/Youtbe.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin: 5px;
+}
+
+
+input[type=Search] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin: 5px;
+}
+
+input[type=number] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://i.ibb.co/K0qqLdV/Eye.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin: 5px;
+}
+   .button {
+  background-color: white; /* Green */
+  border: none;
+   width: 100%;  
+  color: black;
+  font-weight: bold;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 2px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button1:hover {
+  box-shadow:  0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  
+background-color: transparent;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 60%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.extcheck {
+  position: relative;
+  padding: 5px;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin: 5px;
+  font-size: 4rem;
+}
+
+ .checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 80% 80%;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 60px #7ac142;
+  }
+}
